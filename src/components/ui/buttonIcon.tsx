@@ -1,21 +1,17 @@
 import { cn } from "@/lib/utils";
 import { IconType } from "react-icons";
 
-interface Props {
+interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   icon: IconType;
-  onClick?: () => void;
-  className?: string;
 }
 
-const ButtonIcon = ({ icon: Icon, className, onClick }: Props) => {
+const ButtonIcon = ({ icon: Icon, ...props }: Props) => {
   return (
     <button
-      type="button"
       className={cn(
-        "p-4 bg-gray-100 rounded-xl text-primary border-2 border-transparent hover:border-primary transition-colors duration-300",
-        className
+        "p-4 bg-gray-100 rounded-xl text-primary border-2 border-transparent hover:border-primary transition-colors duration-300"
       )}
-      onClick={onClick}
+      {...props}
     >
       <Icon size={25} />
     </button>

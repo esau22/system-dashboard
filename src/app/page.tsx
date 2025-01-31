@@ -1,9 +1,9 @@
-import Navbar from "@/components/share/nav/Navbar";
+import Banner from "@/components/share/banner/Banner";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
+      <Banner />
     </>
   );
 }

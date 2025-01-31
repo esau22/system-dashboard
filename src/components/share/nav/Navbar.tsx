@@ -14,26 +14,26 @@ const Navbar = () => {
   };
   return (
     <nav className="fixed w-full h-20 shadow-xl bg-white">
-      <div className="flex justify-between items-center h-full w-full px-4 2xl:px-16">
+      <div className="flex justify-between items-center h-full w-full px-4 2xl:px-16 gap-6">
         <Logo />
-        <div className="flex space-y-2 md:flex-col">
+        <div className="hidden md:flex space-x-4">
           <NavItem />
         </div>
-        <ButtonIcon icon={IoMdLogIn} />
-        <div onClick={handleNav} className="sm:hidden cursor-pointer pl-24">
-          <AiOutlineMenu size={25} />
+        <div className="flex items-center space-x-4">
+          <ButtonIcon icon={IoMdLogIn} />
+        </div>
+        <div className="sm:hidden cursor-pointer ml-auto">
+          <ButtonIcon onClick={handleNav} icon={AiOutlineMenu} />
         </div>
         <div
-          className={`fixed left-0 top-0 w-[65%] sm:hidden h-screen bg-gray-300 p-10 ease-in duration-500 ${
+          className={`fixed left-0 top-0 w-4/5 max-w-xs sm:hidden h-screen bg-gray-300 p-10 ease-in duration-500 ${
             menuOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
-          <div
-            className="absolute top-4 right-4 cursor-pointer z-50"
-            onClick={handleNav}
-          >
-            <AiOutlineClose size={25} />
+          <div className="absolute top-2.5 right-4 cursor-pointer z-50">
+            <ButtonIcon onClick={handleNav} icon={AiOutlineClose} />
           </div>
+
           <div className="flex flex-col mt-10">
             <NavItem isMobile />
           </div>
