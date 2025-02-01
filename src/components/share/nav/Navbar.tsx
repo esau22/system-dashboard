@@ -13,16 +13,16 @@ const Navbar = () => {
     setMenuOpen(!menuOpen);
   };
   return (
-    <nav className="fixed w-full h-20 shadow-xl bg-white">
-      <div className="flex justify-between items-center h-full w-full px-4 2xl:px-16 gap-6">
+    <nav className="sticky top-0 w-full h-20 shadow-xl bg-white left-0 z-50">
+      <div className="flex justify-between items-center h-full w-full px-3 gap-4 ml-auto">
         <Logo />
-        <div className="hidden md:flex space-x-4">
+        <div className="hidden md:flex">
           <NavItem />
         </div>
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center">
           <ButtonIcon icon={IoMdLogIn} />
         </div>
-        <div className="sm:hidden cursor-pointer ml-auto">
+        <div className="sm:hidden cursor-pointer">
           <ButtonIcon onClick={handleNav} icon={AiOutlineMenu} />
         </div>
         <div
